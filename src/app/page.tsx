@@ -1,14 +1,22 @@
 import AllBlogsSection from "@/components/AllBlogsSection/AllBlogsSection";
 import RecentSection from "@/components/recentSection/RecentSection";
 
+export interface post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+
 export default async function Home() {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
     next: {
       revalidate: 120,
     },
   });
-  const posts = await response.json();
-  console.log(posts);
+  const posts: post[] = await response.json();
+  const recentPosts = posts.slice(0, 4);
+  const allPosts = posts.slice(0, 20);
 
   return (
     <>
@@ -16,8 +24,8 @@ export default async function Home() {
         The blog
       </p>
       <main className="px-8">
-        <RecentSection />
-        <AllBlogsSection />
+        <RecentSection recentPosts={recentPosts} />
+        <AllBlogsSection posts={allPosts} />
       </main>
     </>
   );

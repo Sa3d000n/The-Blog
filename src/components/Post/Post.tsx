@@ -1,8 +1,12 @@
+import { post } from "@/app/page";
 import Badge from "../Badge/Badge";
+
 interface PostProps {
   id?: number;
+  post: post;
 }
-function Post({ id = 0 }: PostProps) {
+function Post({ id = 0, post }: PostProps) {
+  
   const styleForId: { [key: number]: { parent: string; children: string } } = {
     0: { parent: "", children: "" },
     1: {
@@ -41,16 +45,12 @@ function Post({ id = 0 }: PostProps) {
 
         <a href="#">
           <h3 className="text-2xl font-semibold text-gray-900 flex flex-row justify-between gap-6 ">
-            How to position your furniture for positivity <span>&#8599;</span>
+            {post?.title} <span>&#8599;</span>
           </h3>
         </a>
 
         <p className="mt-2 line-clamp-3 leading-relaxed text-gray-500">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-          dolores, possimus pariatur animi temporibus nesciunt praesentium
-          dolore sed nulla ipsum eveniet corporis quidem, mollitia itaque minus
-          soluta, voluptates neque explicabo tempora nisi culpa eius atque
-          dignissimos. Molestias explicabo corporis voluptatem?
+          {post?.body}
         </p>
         <div>
           <Badge title="Design" />
