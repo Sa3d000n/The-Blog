@@ -8,7 +8,8 @@ export default async function Home() {
     },
   });
   const posts = await response.json();
-  const recentPosts = posts.slice();
+  console.log(posts);
+
   return (
     <>
       <p className="text-7xl  md:text-[160px] lg:text-[243px] uppercase text-center font-bold border-y-2 border-gray-300 py-4">
