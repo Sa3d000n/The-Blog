@@ -29,7 +29,7 @@ function Post({ id = 0, post }: PostProps) {
   };
   return (
     <article
-      className={`   transition hover:shadow-lg ${styleForId[id].parent} ${styleForId[id].children} w-auto `}
+      className={`   transition hover:shadow-lg dark:shadow-amber-50 ${styleForId[id].parent} ${styleForId[id].children} w-auto `}
     >
       <img
         alt=""
@@ -37,19 +37,19 @@ function Post({ id = 0, post }: PostProps) {
         className="h-56 w-full object-cover"
       />
 
-      <div className="bg-white p-4 sm:p-6 flex flex-col gap-3">
+      <div className="bg-white dark:bg-slate-950   p-4 sm:p-6 flex flex-col gap-3">
         <time className="block font-semibold   text-violet-800">
           {" "}
           Sunday , 1 Jan 2023
         </time>
 
         <Link href={`/${post.id}`}>
-          <h3 className="text-2xl font-semibold text-gray-900 flex flex-row justify-between gap-6 ">
+          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white flex flex-row justify-between gap-6 ">
             {post?.title} <span>&#8599;</span>
           </h3>
         </Link>
 
-        <p className="mt-2 line-clamp-3 leading-relaxed text-gray-500">
+        <p className="mt-2 line-clamp-3 leading-relaxed dark:text-neutral-300 text-gray-500">
           {post?.body}
         </p>
         <div>
