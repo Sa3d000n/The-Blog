@@ -12,10 +12,10 @@ export default function Navbar() {
   const isActive = pathname === "/";
 
   return (
-    <header className="p-2 px-8 flex justify-between lg:px-28 lg:py-8">
+    <header className="p-2 px-8 flex justify-between items-center lg:px-28 lg:py-8">
       {isOpened ? (
         <nav className="flex flex-col  justify-center items-center w-full">
-          <p className="mb-9">Saad Abdelfattah</p>
+          <p className="mb-9 font-semibold">Saad Abdelfattah</p>
           <ul className="flex flex-col gap-5">
             <li className={isActive ? "text-blue-500" : ""}>
               {" "}
@@ -40,7 +40,7 @@ export default function Navbar() {
         </nav>
       ) : (
         <>
-          <p>Saad AbdelFattah</p>
+          <p className="font-semibold">Saad AbdelFattah</p>
           {/* <svg
            
             xmlns="http://www.w3.org/2000/svg"
