@@ -1,12 +1,12 @@
 import { post } from "@/app/page";
 import Badge from "../Badge/Badge";
+import Link from "next/link";
 
 interface PostProps {
   id?: number;
   post: post;
 }
 function Post({ id = 0, post }: PostProps) {
-  
   const styleForId: { [key: number]: { parent: string; children: string } } = {
     0: { parent: "", children: "" },
     1: {
@@ -43,11 +43,11 @@ function Post({ id = 0, post }: PostProps) {
           Sunday , 1 Jan 2023
         </time>
 
-        <a href="#">
+        <Link href={`/${post.id}`}>
           <h3 className="text-2xl font-semibold text-gray-900 flex flex-row justify-between gap-6 ">
             {post?.title} <span>&#8599;</span>
           </h3>
-        </a>
+        </Link>
 
         <p className="mt-2 line-clamp-3 leading-relaxed text-gray-500">
           {post?.body}

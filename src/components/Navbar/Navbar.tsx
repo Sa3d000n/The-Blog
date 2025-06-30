@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpened, setIsOpened] = useState(false);
@@ -12,7 +13,10 @@ export default function Navbar() {
         <nav className="flex flex-col  justify-center items-center w-full">
           <p className="mb-9">Saad Abdelfattah</p>
           <ul className="flex flex-col gap-5">
-            <li>Blog</li>
+            <li>
+              {" "}
+              <Link href="/">Blog</Link>{" "}
+            </li>
             <li>Projects</li>
             <li>About</li>
             <li>Newsletter</li>
@@ -58,7 +62,7 @@ export default function Navbar() {
       )}
       <nav className="hidden md:block w-auto ">
         <ul className="flex flex-row items-center justify-around gap-3.5 lg:gap-10">
-          <li>Blog</li>
+          <Link href="/">Blog</Link>
           <li>Projects</li>
           <li>About</li>
           <li>Newsletter</li>
