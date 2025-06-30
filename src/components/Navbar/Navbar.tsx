@@ -4,18 +4,24 @@ import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isOpened, setIsOpened] = useState(false);
+  const isActive = pathname === "/";
+
   return (
     <header className="p-2 px-8 flex justify-between lg:px-28 lg:py-8">
       {isOpened ? (
         <nav className="flex flex-col  justify-center items-center w-full">
           <p className="mb-9">Saad Abdelfattah</p>
           <ul className="flex flex-col gap-5">
-            <li>
+            <li className={isActive ? "text-blue-500" : ""}>
               {" "}
-              <Link href="/">Blog</Link>{" "}
+              <Link href="/" className={isActive ? "text-blue-500" : ""}>
+                Blog
+              </Link>{" "}
             </li>
             <li>Projects</li>
             <li>About</li>
@@ -62,7 +68,9 @@ export default function Navbar() {
       )}
       <nav className="hidden md:block w-auto ">
         <ul className="flex flex-row items-center justify-around gap-3.5 lg:gap-10">
-          <Link href="/">Blog</Link>
+          <Link href="/" className={isActive ? "text-blue-500" : ""}>
+            Blog
+          </Link>
           <li>Projects</li>
           <li>About</li>
           <li>Newsletter</li>

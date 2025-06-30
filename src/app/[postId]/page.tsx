@@ -1,12 +1,16 @@
 import { notFound } from "next/navigation";
 import { post } from "../page";
+import { Metadata } from "next";
 
 interface PostDetailsProps {
   params: Promise<{
     postId: number;
   }>;
 }
-
+export const metadata: Metadata = {
+  title: "Post Details Page",
+  description:"simple Post Details Page"
+};
 export default async function PostDetails({ params }: PostDetailsProps) {
   const { postId } = await params;
   if (isNaN(postId)) {
