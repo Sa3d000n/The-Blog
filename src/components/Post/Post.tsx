@@ -34,7 +34,7 @@ function Post({ id = 0, post }: PostProps) {
       <img
         alt=""
         src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-        className="h-56 w-full object-cover"
+        className=" w-full object-cover "
       />
 
       <div className="bg-white dark:bg-slate-950   p-4 sm:p-6 flex flex-col gap-3">
